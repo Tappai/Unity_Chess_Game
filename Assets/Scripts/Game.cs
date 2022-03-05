@@ -12,7 +12,7 @@ public class Game : MonoBehaviour
     private GameObject[] playerBlack = new GameObject[16];
     private GameObject[] playerWhite = new GameObject[16];
 
-    private string currentPlayer = "White";
+    private string currentPlayer = "white";
     private bool gameOver = false;
     // Start is called before the first frame update
     void Start()
@@ -92,6 +92,11 @@ public class Game : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (gameOver == true && Input.GetMouseButtonDown(0))
         {
             gameOver = false;
